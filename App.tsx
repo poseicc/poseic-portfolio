@@ -9,6 +9,7 @@ import { GithubRepos } from './components/GithubRepos';
 import { DiscordStatus } from './components/DiscordStatus';
 import { LoadingScreen } from './components/LoadingScreen';
 import { AiChat } from './components/AiChat';
+import { MusicPlayer } from './components/MusicPlayer';
 import { Section } from './types';
 import { motion, useScroll, useSpring } from 'framer-motion';
 
@@ -70,6 +71,7 @@ const App: React.FC = () => {
       <Scene3D />
       <DynamicIsland activeSection={activeSection} onNavigate={scrollToSection} />
       <DiscordStatus />
+      <MusicPlayer />
 
       {/* Content Sections */}
       <main className="relative z-10 flex flex-col gap-0 md:gap-0 pb-32">
