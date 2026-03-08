@@ -8,6 +8,7 @@ import { Contact } from './components/Contact';
 import { GithubRepos } from './components/GithubRepos';
 import { DiscordStatus } from './components/DiscordStatus';
 import { LoadingScreen } from './components/LoadingScreen';
+import { AiChat } from './components/AiChat';
 import { Section } from './types';
 import { motion, useScroll, useSpring } from 'framer-motion';
 
@@ -76,26 +77,51 @@ const App: React.FC = () => {
           <Hero />
         </section>
 
-        <section id="projects" className="min-h-screen py-24 flex flex-col justify-center relative">
+        <section id="projects" className="min-h-screen py-16 md:py-24 flex flex-col justify-center relative">
           <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-purple-600/10 rounded-full blur-[120px] pointer-events-none" />
           <BentoGrid />
           <GithubRepos />
         </section>
 
-        <section id="about" className="min-h-[60vh] flex items-center justify-center px-8 relative py-24">
+        <section id="about" className="min-h-[50vh] flex items-center justify-center px-6 md:px-8 relative py-16 md:py-24">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[100px] pointer-events-none" />
           <div className="max-w-4xl text-center relative z-10">
-            <h2 className="text-3xl font-display font-bold text-accent mb-8 tracking-tight">VİZYON & YAKLAŞIM</h2>
-            <p className="text-2xl md:text-4xl leading-relaxed text-gray-300 font-light">
-              Teknolojiyi sanatla harmanlayarak, dijital dünyada iz bırakan deneyimler tasarlıyorum.
-              Karmaşık problemleri, <span className="text-white font-medium italic">akıcı</span> ve <span className="text-white font-medium italic">estetik</span> çözümlere dönüştürmek benim tutkum.
-            </p>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <div className="flex items-center justify-center gap-2 mb-6">
+                <div className="h-[1px] w-8 bg-accent/50" />
+                <span className="text-accent text-xs font-medium tracking-widest uppercase">Vizyon</span>
+                <div className="h-[1px] w-8 bg-accent/50" />
+              </div>
+              <h2 className="text-2xl md:text-3xl font-display font-bold text-accent mb-6 tracking-tight">
+                VİZYON & YAKLAŞIM
+              </h2>
+              <p className="text-base sm:text-lg md:text-2xl leading-relaxed text-gray-300 font-light mb-6">
+                Kod yazmak benim için sadece bir meslek değil — bir sanat formu. Her satırda bir amaç,
+                her projede bir kimlik bırakıyorum. Teknolojiyi estetikle harmanlayarak, insanların
+                sadece kullandığı değil,{' '}
+                <span className="text-white font-medium italic">hissettiği</span>{' '}
+                şeyler inşa ediyorum.
+              </p>
+              <p className="text-base sm:text-lg md:text-2xl leading-relaxed text-gray-300 font-light">
+                Sıradan çözümler beni tatmin etmiyor. Performans, tasarım ve deneyim — üçü aynı anda
+                mükemmel olmak zorunda. Çünkü iyi bir ürün gözle değil,{' '}
+                <span className="text-white font-medium italic">ruhla</span>{' '}
+                algılanır.
+              </p>
+            </motion.div>
           </div>
         </section>
 
         <section id="contact">
           <Contact />
         </section>
+
+        <AiChat />
       </main>
     </div>
   );
