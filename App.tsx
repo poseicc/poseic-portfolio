@@ -9,7 +9,7 @@ import { GithubRepos } from './components/GithubRepos';
 import { DiscordStatus } from './components/DiscordStatus';
 import { LoadingScreen } from './components/LoadingScreen';
 import { AiChat } from './components/AiChat';
-import { MusicPlayer } from './components/MusicPlayer';
+import { Experience } from './components/Experience';
 import { Section } from './types';
 import { motion, useScroll, useSpring } from 'framer-motion';
 
@@ -71,7 +71,6 @@ const App: React.FC = () => {
       <Scene3D />
       <DynamicIsland activeSection={activeSection} onNavigate={scrollToSection} />
       <DiscordStatus />
-      <MusicPlayer />
 
       {/* Content Sections */}
       <main className="relative z-10 flex flex-col gap-0 md:gap-0 pb-32">
@@ -83,6 +82,11 @@ const App: React.FC = () => {
           <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-purple-600/10 rounded-full blur-[120px] pointer-events-none" />
           <BentoGrid />
           <GithubRepos />
+        </section>
+
+        <section id="experience" className="min-h-screen relative">
+          <div className="absolute left-0 top-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[120px] pointer-events-none" />
+          <Experience />
         </section>
 
         <section id="about" className="min-h-[50vh] flex items-center justify-center px-6 md:px-8 relative py-16 md:py-24">

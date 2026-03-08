@@ -279,7 +279,7 @@ export const AiChat: React.FC = () => {
                   <Send size={14} />
                 </button>
               </div>
-              <p className="text-center text-white/20 text-[10px] font-mono mt-2">powered by claude</p>
+              <p className="text-center text-white/20 text-[10px] font-mono mt-2">Powered by poseic</p>
             </div>
           </motion.div>
         )}

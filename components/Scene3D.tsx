@@ -37,18 +37,12 @@ const AnimatedShape = () => {
           color="#1e1e1e"
           attach="material"
           distort={0.4}
-          speed={1.5}
+          speed={2}
           roughness={0.2}
           metalness={0.9}
         />
       </Sphere>
     </Float>
-  );
-};
-
-const BackgroundParticles = () => {
-  return (
-    <Stars radius={40} depth={50} count={10000} factor={4} saturation={0} fade speed={1} />
   );
 };
 
@@ -62,7 +56,15 @@ export const Scene3D: React.FC = () => {
         {!isMobile && <directionalLight position={[10, 10, 5]} intensity={1} color="#4f46e5" />}
         {!isMobile && <pointLight position={[-10, -10, -10]} intensity={0.5} color="#ec4899" />}
         {!isMobile && <AnimatedShape />}
-        <Stars radius={40} depth={50} count={isMobile ? 2000 : 10000} factor={4} saturation={0} fade speed={isMobile ? 0.5 : 1} />
+        <Stars
+          radius={10}
+          depth={150}
+          count={isMobile ? 2000 : 8000}
+          factor={6}
+          saturation={99999}
+          fade
+          speed={isMobile ? 0.7 : 2}
+        />
       </Canvas>
     </div>
   );
